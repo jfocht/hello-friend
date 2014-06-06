@@ -22,7 +22,7 @@
   (friend/authorize #{::admin}
     (handler request)))
 
-(def saffron-realm "Meal Queue API")
+(def realm "API")
 
 (def secure-handler
   (->
@@ -32,5 +32,5 @@
                                              users
                                              {:username username :password password}))
                           :workflows [(workflows/http-basic)
-                                      (partial workflows/http-basic-deny saffron-realm)]})
+                                      (partial workflows/http-basic-deny realm)]})
 ))
